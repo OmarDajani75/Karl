@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="CSS/index.css">
+  <link rel="stylesheet" href="../CSS/index.css">
   <!-- Needed Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
@@ -12,9 +12,96 @@
 </head>
 <body>
 
+  <!-- Header and Navbar -->	
+  <header>
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container-fluid">
+      <a class="navbar-brand" href="#"></a>
+        <div class="d-flex align-items-center"> 
+          <a class="nav-link" href="#blurb">About</a>
+          <a class="nav-link" href="">Locations</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="header-container">
+    <h1>Karl</h1>
+  </div>
+
+  <!-- Blurb section -->
+  <section id="blurb" class="py-5">
+    <div class="container text-center">
+        <div class="row">
+          <div class="col-md-10 section-title">
+            <p class="blurb-info">Welcome to Karl! This web app will be your go-to hub for San Francisco weather on the web, no mobile app needed!</p>
+	    <p class="blurb-info">From the current weather to the average weather over time, Karl will surely satisfy all your San Francisco-related weather needs!</p>
+          </div>  
+        </div>
+      </div>
+  </section>
+
+  <!-- Info section -->
+  <section id="info" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Some weather info</h2>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <div class="card h-101">
+            <img src="../Images/hero/Karl.jpg" class="card-img-top" alt="Picture of people look at a foggy Golden Gate Bridge from a distance">
+            <div class="card-body">
+              <h5 class="card-title">Wait.. Karl? Who is that?</h5>
+              <p class="card-text">Karl is the fog of San Francisco. It is so prevalent that people gave it its own name!</p>
+              <a href="https://www.kqed.org/news/11682057/how-the-bay-areas-fog-came-to-be-named-karl" class="btn btn-secondary" target="_blank">Learn more here!</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-101">
+            <img src="../Images/hero/Microclimates.jpg" class="card-img-top" alt="Picture of sunny yet somehow also foggy mountain landscape">
+            <div class="card-body">
+              <h5 class="card-title">What is a microclimate?</h5>
+              <p class="card-text">Local set of atmospheric conditions that differ from those in the surrounding areas. San Francisco is filled with these!</p>
+              <a href="https://www.worldatlas.com/articles/the-microclimates-of-san-francisco.html" class="btn btn-secondary">Learn more here!</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-101">
+            <img src="../Images/hero/June_Gloom.jpg" class="card-img-top" alt="Picture of foggy beach">
+            <div class="card-body">
+              <h5 class="card-title">What is June Gloom? Ominous..</h5>
+              <p class="card-text">Weather pattern that yields cloudy, overcast skies with cool temperatures during the spring and summer</p>
+              <a href="https://www.cbsnews.com/sanfrancisco/news/wheres-the-fog-no-more-june-gloom-in-san-francisco/" class="btn btn-secondary">Learn more here!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> 
+  
+  <!-- Footer -->
+  <footer id="finale">
+    <div class="text-center p-3">© 2024 Karl. All rights reserved.</div>
+  </footer>
+
   <!-- Needed Bootstrap JavaScript -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
+
+<!-- Old Navbar code: -->
+<!-- <header>
+      <nav class="navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Karl</a>
+      
+        <div class="d-flex align-items-center"> 
+          <a class="nav-link" href="#intro">About</a>
+          <a class="nav-link" href="#projects">Locations</a>
+        </div>
+      </div>
+      </nav>
+    </header>  -->
