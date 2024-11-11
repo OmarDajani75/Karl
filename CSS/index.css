@@ -4,30 +4,16 @@
   box-sizing: border-box; /* I don't think this is doing anything lol..? */
 }
 
-/* Header and Navbar CSS */
+/* Navbar and Header CSS */
 
-.header-container {
-  background-image: url(../Images/hero/GGBK.jpg);
-  background-size: cover;
-  background-position: top;
+.navbar-brand {
+  position: relative;
+  background: url(../Images/logos/Sunspot.png);
+  width: 170px;
+  height: 50px;
+  left: 15px;
+  background-size: contain;
   background-repeat: no-repeat;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.header-container h1 {
-  font-size: 80px;
-  color: #EBE1ED;
-  text-shadow: 2px 2px 5px #34356F;
-  /* animation: */
-}
-
-.navbar {
-  background: none;
 }
 
 .navbar-brand,
@@ -36,16 +22,6 @@
   color: #C97D60;
   transition: all 0.3s ease;
   font-size: larger;
-}
-
-.navbar-brand {
-  position: relative;
-  background: url(../Images/hero/Nova.png);
-  width: 170px;
-  height: 50px;
-  left: 15px;
-  background-size: contain;
-  background-repeat: no-repeat;
 }
 
 .nav-link {
@@ -73,6 +49,26 @@
 
 .nav-link:hover::after {
   opacity: 1;
+}
+
+.header-container {
+  background-image: url(../Images/hero/GGBA.jpg);
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.header-container h1 {
+  font-size: 80px;
+  color: #EBE1ED;
+  text-shadow: 2px 2px 5px #34356F;
+  /* animation: */
 }
 
 /* Blurb section CSS */
