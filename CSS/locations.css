@@ -1,0 +1,104 @@
+/* General CSS */
+
+* {
+	box-sizing: border-box;
+	/* I don't think this is doing anything lol..? */
+}
+
+/* Navbar and Header CSS */
+
+.navbar-brand {
+	position: relative;
+	background: url(../Images/icons/Sunspot.png);
+	width: 170px;
+	height: 50px;
+	left: 15px;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.navbar-brand,
+.nav-link,
+#finale {
+	color: #C97D60;
+	transition: all 0.3s ease;
+	font-size: larger;
+}
+
+.nav-link {
+	position: relative;
+}
+
+.navbar-brand:hover,
+.navbar-brand:active,
+.nav-link:hover,
+.nav-link:active {
+	color: #B6BE9C !important;
+}
+
+.nav-link::after {
+	content: '';
+	opacity: 0;
+	transition: all 0.2s;
+	height: 2px;
+	width: 100%;
+	background-color: #C97D60;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+.nav-link:hover::after {
+	opacity: 1;
+}
+
+.header-container {
+	background-image: url(../Images/hero/GGBA.jpg);
+	background-size: cover;
+	background-position: top;
+	background-repeat: no-repeat;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.header-container h1 {
+	font-size: 80px;
+	color: #EBE1ED;
+	text-shadow: 2px 2px 5px #34356F;
+	/* animation: */
+}
+
+/* Blurb section CSS */
+
+.blurb-info {}
+
+/* Info section CSS */
+
+.card-title {
+	color: #C97D60;
+}
+
+.card-img-top {
+	width: 100%;
+	height: 15vw;
+	object-fit: cover;
+}
+
+/* To make it so all the cards are the same size */
+
+.h-101 {
+	transition: all 0.3s;
+}
+
+.h-101:hover {
+	transform: scale(1.15);
+}
+
+/* Footer CSS */
+.p-3 {
+	font-size: larger;
+}
