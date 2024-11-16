@@ -1,8 +1,12 @@
 /* General CSS */
 
 * {
-  box-sizing: border-box; /* I don't think this is doing anything..? */
+  box-sizing: border-box !important; /* I don't think this is doing anything? Even with !important? */
 }
+
+body {
+  background-color: #2F283C !important;
+} /* Now I know why applying coloring to body for Eudaimonia didn't work.. it was because of Bootstrap! !important handles this */
 
 /* Navbar and Header CSS */
 
@@ -18,7 +22,7 @@
 
 .navbar-brand,
 .nav-link {
-  color: #CE9045;
+  color: #C97D60;
   transition: all 0.3s ease;
   font-size: 25px;
   font-family: "Acme";
@@ -30,7 +34,7 @@
 
 .nav-link:hover,
 .nav-link:active {
-  color: #CE9045 !important;
+  color: #C97D60 !important;
 }
 
 .nav-link::after {
@@ -39,7 +43,7 @@
   transition: all 0.2s;
   height: 2px;
   width: 100%;
-  background-color: #CE9045;
+  background-color: #C97D60;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -65,8 +69,8 @@
 .header-container h1 {
   font-size: 80px;
   font-family: "Acme";
-  color: #CE9045;
-  /* #CE9045; */
+  color: #C97D60;
+  /* #C97D60; */
   text-shadow: 2px 2px 5px #34356F;
   /* animation: */
 }
@@ -74,7 +78,7 @@
 /* Blurb section CSS */
 
 .blurb-info {
-  color: #CE9045;
+  color: #C97D60;
   font-family: "Acme";
   font-size: larger;
 }
@@ -82,11 +86,12 @@
 /* Info section CSS */
 
 .mb-4 {
-  color: #CE9045;
+  color: #C97D60;
   font-family: "Acme";
 }
 
 .h-101 {
+  border-color: #2F283C !important;
   transition: all 0.3s;
 }
 
@@ -100,25 +105,31 @@
   object-fit: cover;
 } /* To make it so all the cards are the same size */
 
+.card-body {
+  background-color: #2F283C;
+}
+
 .card-title {
-  color: #CE9045;
+  color: #C97D60;
   font-family: "Acme";
 }
 
 .card-text {
-  color: #CE9045;
+  color: #C97D60;
   font-family: "Acme";
 }
 
 .btn-secondary {
-  color: #CE9045 !important;
+  color: #C97D60 !important;
+  background-color: #2F283C !important;
+  border-color: #2F283C !important;
   font-family: "Acme";
-}
+} /* So many uses of !important.. but I had to. Bootstrap and all */
 
 /* Footer CSS */
 
 #finale {
-  color: #CE9045;
+  color: #C97D60;
   transition: all 0.3s ease;
   font-size: 20px;
   font-family: "Acme";
