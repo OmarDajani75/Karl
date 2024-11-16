@@ -18,7 +18,7 @@
 
 .navbar-brand,
 .nav-link {
-  color: #C97D60;
+  color: #CE9045;
   transition: all 0.3s ease;
   font-size: 25px;
   font-family: "Acme";
@@ -30,7 +30,7 @@
 
 .nav-link:hover,
 .nav-link:active {
-  color: #B6BE9C !important;
+  color: #CE9045 !important;
 }
 
 .nav-link::after {
@@ -39,7 +39,7 @@
   transition: all 0.2s;
   height: 2px;
   width: 100%;
-  background-color: #C97D60;
+  background-color: #CE9045;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -65,7 +65,7 @@
 .header-container h1 {
   font-size: 80px;
   font-family: "Acme";
-  color: #EBE1ED;
+  color: #CE9045;
   /* #CE9045; */
   text-shadow: 2px 2px 5px #34356F;
   /* animation: */
@@ -74,6 +74,7 @@
 /* Blurb section CSS */
 
 .blurb-info {
+  color: #CE9045;
   font-family: "Acme";
   font-size: larger;
 }
@@ -81,6 +82,7 @@
 /* Info section CSS */
 
 .mb-4 {
+  color: #CE9045;
   font-family: "Acme";
 }
 
@@ -99,18 +101,24 @@
 } /* To make it so all the cards are the same size */
 
 .card-title {
-  color: #C97D60;
+  color: #CE9045;
   font-family: "Acme";
 }
 
 .card-text {
+  color: #CE9045;
+  font-family: "Acme";
+}
+
+.btn-secondary {
+  color: #CE9045 !important;
   font-family: "Acme";
 }
 
 /* Footer CSS */
 
 #finale {
-  color: #C97D60;
+  color: #CE9045;
   transition: all 0.3s ease;
   font-size: 20px;
   font-family: "Acme";
