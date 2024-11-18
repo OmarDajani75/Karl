@@ -115,6 +115,11 @@ body {
   font-family: "Acme";
 }
 
+hr {
+  background: #E04327;
+  margin: -0.75rem;
+}
+
 .card-text {
   color: #C97D60;
   font-family: "Acme";
