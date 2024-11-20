@@ -78,10 +78,16 @@ body {
 
 /* Blurb section CSS */
 
+.border-danger {
+  background-color: #3B4566;
+  border-radius: 10px;
+}
+
 .blurb-info {
   color: #C97D60;
   font-family: "Acme";
-  font-size: larger;
+  font-size: 25px;
+  padding-top: 30px;
 }
 
 /* Info section CSS */
@@ -92,7 +98,7 @@ body {
 }
 
 .h-101 {
-  border-color: #814E4C !important;
+  border-color: #E04327 !important;
   transition: all 0.3s;
 }
 
@@ -113,6 +119,7 @@ body {
 .card-title {
   color: #CE9045;
   font-family: "Acme";
+  font-size: 24px;
 }
 
 hr {
@@ -123,6 +130,7 @@ hr {
 .card-text {
   color: #C97D60;
   font-family: "Acme";
+  font-size: 21px;
 }
 
 .btn-secondary {
@@ -130,6 +138,7 @@ hr {
   background-color: #577192 !important;
   border-color: #577192 !important;
   font-family: "Acme";
+  font-size: 19px !important;
 } /* So many uses of !important.. but I had to. Bootstrap and all */
 
 /* Footer CSS */
