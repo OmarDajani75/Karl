@@ -95,6 +95,7 @@ body {
 .mb-4 {
   color: #CE9045;
   font-family: "Acme";
+  padding-bottom: 15px !important;
 }
 
 .h-101 {
@@ -148,6 +149,7 @@ hr {
   transition: all 0.3s ease;
   font-size: 20px;
   font-family: "Acme";
+  padding-top: 10px !important;
 }
 
 .p-3 {

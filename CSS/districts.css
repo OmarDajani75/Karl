@@ -1,8 +1,12 @@
 /* General CSS */
 
 * {
-  box-sizing: border-box; /* I don't think this is doing anything lol..? */
+  box-sizing: border-box !important; /* I don't think this is doing anything? Even with !important? */
 }
+
+body {
+  background-color: #2F283C !important;
+} /* Now I know why applying coloring to body for Eudaimonia didn't work.. it was because of Bootstrap! !important handles this */
 
 /* Navbar and Header CSS */
 
@@ -17,15 +21,38 @@
 }
 
 .navbar-brand,
-#finale {
-  color: #C97D60;
+.nav-link {
+  color: #CE9045;
   transition: all 0.3s ease;
-  font-size: larger;
+  font-size: 25px;
+  font-family: "Acme";
 }
 
-.navbar-brand:hover,
-.navbar-brand:active {
-  color: #B6BE9C !important;
+.nav-link {
+  position: relative;
+}
+
+.nav-link:hover,
+.nav-link:active,
+.btn-secondary:hover,
+.btn-secondary:active {
+  color: #E04327 !important;
+}
+
+.nav-link::after {
+  content: '';
+  opacity: 0;
+  transition: all 0.2s;
+  height: 2px;
+  width: 100%;
+  background-color: #E04327;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.nav-link:hover::after {
+  opacity: 1;
 }
 
 .header-container {
@@ -43,42 +70,82 @@
 
 .header-container h1 {
   font-size: 80px;
-  color: #EBE1ED;
-  text-shadow: 2px 2px 5px #34356F;
+  font-family: "Acme";
+  color: #CE9045;
+  text-shadow: 2px 2px 5px #2F283C;
   /* animation: */
 }
 
 /* Blurb section CSS */
 
-.blurb-info {}
+.border-danger {
+  background-color: #3B4566;
+  border-radius: 10px;
+}
+
+.blurb-info {
+  color: #C97D60;
+  font-family: "Acme";
+  font-size: 25px;
+  padding-top: 30px;
+}
 
 /* Info section CSS */
 
-.g-4 {
-  margin: 35px;	
+.mb-4 {
+  color: #CE9045;
+  font-family: "Acme";
 }
 
-.card-title {
-  color: #C97D60;
+.h-101 {
+  border-color: #E04327 !important;
+  transition: all 0.3s;
 }
 
 .card-img-top {
   width: 100%;
   height: 15vw;
   object-fit: cover;
+} /* To make it so all the cards are the same size */
+
+.card-body {
+  background-color: #3B4566;
 }
 
-/* To make it so all the cards are the same size */
-
-.h-101 {
-  transition: all 0.3s;
+.card-title {
+  color: #CE9045;
+  font-family: "Acme";
+  font-size: 24px;
 }
 
-.h-101:hover {
-  transform: scale(1.15);
+hr {
+  background: #E04327;
+  margin: -0.75rem;
 }
+
+.card-text {
+  color: #C97D60;
+  font-family: "Acme";
+  font-size: 21px;
+}
+
+.btn-secondary {
+  color: #CE9045 !important;
+  background-color: #577192 !important;
+  border-color: #577192 !important;
+  font-family: "Acme";
+  font-size: 19px !important;
+} /* So many uses of !important.. but I had to. Bootstrap and all */
 
 /* Footer CSS */
+
+#finale {
+  color: #CE9045;
+  transition: all 0.3s ease;
+  font-size: 20px;
+  font-family: "Acme";
+}
+
 .p-3 {
   font-size: larger;
 }
