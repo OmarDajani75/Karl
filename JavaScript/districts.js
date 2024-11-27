@@ -1,6 +1,8 @@
 "use strict";
 
 async function getAllRecords() {
+  let getResultElement = document.getElementById("districts");
+
   const options = {
     method: "GET",
     headers: {
@@ -20,6 +22,7 @@ async function getAllRecords() {
       for (let i = 0; i < data.records.length; i++) {
         let areaPicture = data.records[i].fields["Picture"];
         let areaName = data.records[i].fields["Area Name"];
+        let areaBlurb = data.records[i].fields["Blurbs"];
         let averageTemperature = data.records[i].fields["Average Temperature"];
         let fogFrequency = data.records[i].fields["Fog Frequency"];
         let windSpeeds = data.records[i].fields["Wind Speeds"];
@@ -62,7 +65,7 @@ x.addEventListener("change", function() {
 
 // function for our detail view
 async function getOneRecord(id) {
-  let jobsResultElement = document.getElementById("brews");
+  let jobsResultElement = document.getElementById("districts");
 
   const options = {
     method: "GET",
@@ -78,6 +81,7 @@ async function getOneRecord(id) {
 
       let picture = data.fields["Picture"];
       let name = data.fields["Area Name"];
+      let blurb = data.fields["Blurbs"];
       let average = data.fields["Average Temperature"];
       let fog = data.fields["Fog Frequency"];
       let wind = data.fields["Wind Speeds"];
@@ -98,9 +102,8 @@ async function getOneRecord(id) {
     <div class="col-md-6 d-flex justify-content-center align-items-center desc">
       <div class="card-body">
         <h5 class="card-title bar">${name}</h5>
-        <p class="card-text">${average}</p>
-        <p class="card-text"><small>${stars(rating)} (${rating//HERE. DELETE})</small></p>
-        <p class="card-text"><small>${address} <br> SF, CA ${zip}</small></p>
+        <p class="card-text">${blurb}</p>
+        <p class="card-text"><small>${average} <br> SF, CA ${zip}</small></p>
       </div>
     </div>
   </div>
@@ -145,12 +148,24 @@ async function getOneRecord(id) {
       <td>${outdoor}</td>
     </tr>
     <tr>
-      <th scope="row misc">Food Served</th>
-      <td colspan="2">${formattedString(food)}</td>
+      <th scope="row misc">Fog Frequency</th>
+      <td colspan="2">${formattedString(fog)}</td>
     </tr>
      <tr>
-      <th scope="row misc">Merchandise</th>
-      <td colspan="2">${formattedString(merchandise)}</td>
+      <th scope="row misc">Wind Speeds</th>
+      <td colspan="2">${formattedString(wind)}</td>
+    </tr>
+    <tr>
+      <th scope="row misc">Humidity</th>
+      <td colspan="2">${formattedString(humidity)}</td>
+    </tr>
+    <tr>
+      <th scope="row misc">Historical Temperature</th>
+      <td colspan="2">${formattedString(historical)}</td>
+    </tr>
+    <tr>
+      <th scope="row misc">Wind Speeds</th>
+      <td colspan="2">${formattedString(current)}</td>
     </tr>
     <tr>
       <th scope="row misc">Links</th>
@@ -167,4 +182,16 @@ async function getOneRecord(id) {
 
       jobsResultElement.innerHTML = newHtml;
     });
+}
+
+let idParams = window.location.search.split("?id=");
+if (idParams.length >= 2) {
+  // call function to hide search bar
+  myFunction();
+  // has at least ["?id=", "OUR ID"]
+  getOneRecord(idParams[1]); // create detail view HTML w/ our id
+} else {
+  // Call listener function to hide search bar for mobile devices
+  myNeighborhood(x);
+  getAllRecords(); // no id given, fetch summaries
 }
