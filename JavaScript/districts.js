@@ -10,7 +10,7 @@ async function getAllRecords() {
     },
   };
 
-  await fetch(`https://api.airtable.com/v0/appJQG4D9GOUKXugK/Weather`, options)
+  await fetch(`https://api.airtable.com/v0/appJQG4D9GOUKXugK/Karl`, options)
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
@@ -22,19 +22,19 @@ async function getAllRecords() {
       for (let i = 0; i < data.records.length; i++) {
         let areaPicture = data.records[i].fields["Picture"];
         let areaName = data.records[i].fields["Area Name"];
-        let areaBlurb = data.records[i].fields["Blurbs"];
-        let averageTemperature = data.records[i].fields["Average Temperature"];
-        let fogFrequency = data.records[i].fields["Fog Frequency"];
-        let windSpeeds = data.records[i].fields["Wind Speeds"];
-        let humidity = data.records[i].fields["Humidity"];
-        let historicalTemperature = data.records[i].fields["Historical Temperature"];
-        let currentTemperature = data.records[i].fields["Current Temperature"];
+        // let areaBlurb = data.records[i].fields["Blurbs"];
+        // let averageTemperature = data.records[i].fields["Average Temperature"];
+        // let fogFrequency = data.records[i].fields["Fog Frequency"];
+        // let windSpeeds = data.records[i].fields["Wind Speeds"];
+        // let humidity = data.records[i].fields["Humidity"];
+        // let historicalTemperature = data.records[i].fields["Historical Temperature"];
+        // let currentTemperature = data.records[i].fields["Current Temperature"];
 
         newHtml += `
 
         <div class="col-xl-4 cardImageText">
           <div class="card list move border-dark mb-5" style="width: 20rem;">
-          <a href="breweries.html?id=${
+          <a href="districts.html?id=${
             data.records[i].id
           }">${
           areaPicture
@@ -42,7 +42,7 @@ async function getAllRecords() {
             : ``
         }
           </a>
-          <p hidden class="card-key">${averageTemperature}</p>
+          <p hidden class="card-key">${areaName}</p>
           </div>
           </div>
         </div>
@@ -74,7 +74,7 @@ async function getOneRecord(id) {
     },
   };
 
-  await fetch(`https://api.airtable.com/v0/appJQG4D9GOUKXugK/Weather${id}`, options)
+  await fetch(`https://api.airtable.com/v0/appJQG4D9GOUKXugK/Karl/${id}`, options)
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
@@ -103,7 +103,6 @@ async function getOneRecord(id) {
       <div class="card-body">
         <h5 class="card-title bar">${name}</h5>
         <p class="card-text">${blurb}</p>
-        <p class="card-text"><small>${average} <br> SF, CA ${zip}</small></p>
       </div>
     </div>
   </div>
@@ -117,21 +116,6 @@ async function getOneRecord(id) {
         ? `<img class="img-fluid front" alt="${name}" src="${picture[0].url}">`
         : ``
     }
-       </div>
-       <div class="col-md-6 d-flex justify-content-center align-items-center">
-       <div class="card-body">
-       <div class="card-group hours mx-auto">    
-  <div class="card list hours shift">
-    <div class="card-body">
-      <h4 class="card-title">🕔 Hours</h4>
-      <p class="card-text">${formattedString(hours)}</p>
-      
-    </div>
-  </div>
-  <div class="card list hours">
-    <div class="card-body">
-      <h4 class="card-title">😁 🕔 Happy Hours</h4>
-      <p class="card-text">${formattedString(happy)}</p>
      
     </div>
   </div>
@@ -140,12 +124,8 @@ async function getOneRecord(id) {
 <table class="table misc">
     <tbody>
     <tr>
-      <th scope="row misc">Neighborhood</th>
-      <td class="card-text">${neighborhood}</td>
-    </tr>
-    <tr>
-      <th scope="row misc">Outdoor Seating</th>
-      <td>${outdoor}</td>
+      <th scope="row misc">Average Temperature</th>
+      <td class="card-text">${average}</td>
     </tr>
     <tr>
       <th scope="row misc">Fog Frequency</th>
@@ -166,10 +146,6 @@ async function getOneRecord(id) {
     <tr>
       <th scope="row misc">Wind Speeds</th>
       <td colspan="2">${formattedString(current)}</td>
-    </tr>
-    <tr>
-      <th scope="row misc">Links</th>
-      <td colspan="2"><a href="${website}" target="_blank"><button type="button" class="btn btn-primary btn-sm go">Website</button></a> <a href="${yelp}" target="_blank"><button type="button" class="btn btn-primary btn-sm go">Yelp</button></a></td>
     </tr>
   </tbody>
 </table>
