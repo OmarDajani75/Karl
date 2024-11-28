@@ -1,0 +1,208 @@
+/* General CSS */
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #2F283C;
+	font-family: "Acme", sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+/* Navbar and Header CSS */
+.navbar-brand {
+	position: relative;
+	background: url(../Images/icons/Sunspot.png) no-repeat;
+	width: 170px;
+	height: 50px;
+	left: 15px;
+	background-size: contain;
+}
+
+.navbar-brand,
+.nav-link {
+	color: #CE9045;
+	transition: all 0.3s ease;
+	font-size: 25px;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+	color: #E04327 !important;
+}
+
+.nav-link::after {
+	content: '';
+	height: 2px;
+	width: 100%;
+	background-color: #E04327;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	opacity: 0;
+	transition: opacity 0.2s;
+}
+
+.nav-link:hover::after {
+	opacity: 1;
+}
+
+/* Header Section */
+.header-container {
+	background-image: url(../Images/hero/GGBA.jpg);
+	background-size: cover;
+	background-position: top center;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.header-container h1 {
+	font-size: 80px;
+	color: #CE9045;
+	text-shadow: 2px 2px 5px #2F283C;
+}
+
+/* Card Section */
+.card {
+	background-color: #3B4566;
+	border: 1px solid #E04327;
+	border-radius: 10px;
+	transition: transform 0.2s;
+}
+
+.card:hover {
+	transform: scale(1.05);
+}
+
+.card-img-top {
+	width: 100%;
+	height: 15vw;
+	object-fit: cover;
+}
+
+.card-title {
+	font-size: 24px;
+	color: #CE9045;
+}
+
+.card-text {
+	font-size: 21px;
+	color: #C97D60;
+}
+
+/* Detailed View (More Info) */
+.card.list .row {
+	background-color: #3B4566;
+	border-radius: 10px;
+}
+
+.card-placeholder {
+	width: 100%;
+	height: 15vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #C97D60;
+	background-color: #2F283C;
+	border: 2px dashed #CE9045;
+	font-size: 18px;
+	text-align: center;
+}
+
+/* Table Styling */
+.table {
+	background-color: #3B4566;
+	border: 1px solid #E04327;
+}
+
+.table th,
+.table td {
+	color: #CE9045;
+	border-color: #E04327;
+}
+
+.table th {
+	text-align: left;
+	font-size: 20px;
+}
+
+.table td {
+	text-align: right;
+	font-size: 19px;
+}
+
+/* Buttons */
+.btn-secondary {
+	background-color: #577192 !important;
+	color: #CE9045 !important;
+	border: 1px solid #577192 !important;
+	font-size: 19px;
+	transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+	background-color: #E04327 !important;
+	border-color: #E04327 !important;
+	color: #FFF !important;
+}
+
+/* Footer CSS */
+#finale {
+	color: #CE9045;
+	font-size: 20px;
+	transition: all 0.3s ease;
+	text-align: center;
+	padding: 15px;
+}
+
+#finale:hover {
+	color: #E04327;
+}
+
+.p-3 {
+	font-size: 18px;
+	color: #C97D60;
+}
+
+/* .card {
+	background-color: #3B4566;
+	border: 1px solid #E04327;
+	border-radius: 10px;
+	transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+	transform: scale(1.05);
+}
+
+.card-title {
+	color: #CE9045;
+	font-family: "Acme";
+	font-size: 24px;
+}
+
+.card-text {
+	color: #C97D60;
+	font-family: "Acme";
+	font-size: 21px;
+}
+
+.card-img-top {
+	width: 100%;
+	height: 15vw;
+	object-fit: cover;
+}
+
+.row {
+	gap: 1rem;
+}
+
+.container {
+	padding: 2rem 0;
+} */
