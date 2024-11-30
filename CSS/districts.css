@@ -12,12 +12,11 @@ body {
 
 .navbar-brand {
   position: relative;
-  background: url(../Images/icons/Sunspot.png);
+  background: url(../Images/icons/Sunspot.png) no-repeat;
   width: 170px;
   height: 50px;
   left: 15px;
   background-size: contain;
-  background-repeat: no-repeat;
 }
 
 .navbar-brand,
@@ -106,6 +105,7 @@ body {
   width: 100%;
   height: 15vw;
   object-fit: cover;
+
 } /* To make it so all the cards are the same size */
 
 .card-body {

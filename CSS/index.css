@@ -6,18 +6,18 @@
 
 body {
   background-color: #2F283C !important;
+  font-family: "Acme" !important;
 } /* Now I know why applying coloring to body for Eudaimonia didn't work.. it was because of Bootstrap! !important handles this */
 
 /* Navbar and Header CSS */
 
 .navbar-brand {
   position: relative;
-  background: url(../Images/icons/Sunspot.png);
+  background: url(../Images/icons/Sunspot.png) no-repeat;
   width: 170px;
   height: 50px;
   left: 15px;
   background-size: contain;
-  background-repeat: no-repeat;
 }
 
 .navbar-brand,
@@ -25,7 +25,6 @@ body {
   color: #CE9045;
   transition: all 0.3s ease;
   font-size: 25px;
-  font-family: "Acme";
 }
 
 .nav-link {
@@ -70,10 +69,8 @@ body {
 
 .header-container h1 {
   font-size: 80px;
-  font-family: "Acme";
   color: #CE9045;
   text-shadow: 2px 2px 5px #2F283C;
-  /* animation: */
 }
 
 /* Blurb section CSS */
@@ -85,7 +82,6 @@ body {
 
 .blurb-info {
   color: #C97D60;
-  font-family: "Acme";
   font-size: 25px;
   padding-top: 30px;
 }
@@ -94,7 +90,6 @@ body {
 
 .mb-4 {
   color: #CE9045;
-  font-family: "Acme";
   padding-bottom: 15px !important;
 }
 
@@ -130,7 +125,6 @@ hr {
 
 .card-text {
   color: #C97D60;
-  font-family: "Acme";
   font-size: 21px;
 }
 
@@ -138,7 +132,6 @@ hr {
   color: #CE9045 !important;
   background-color: #577192 !important;
   border-color: #577192 !important;
-  font-family: "Acme";
   font-size: 19px !important;
 } /* So many uses of !important.. but I had to. Bootstrap and all */
 
@@ -148,7 +141,6 @@ hr {
   color: #CE9045;
   transition: all 0.3s ease;
   font-size: 20px;
-  font-family: "Acme";
   padding-top: 10px !important;
 }
 

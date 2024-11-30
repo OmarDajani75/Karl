@@ -5,7 +5,7 @@ function formattedString(value) {
   return value ? value : "No data available";
 }
 
-// Function to fetch and display all districts
+// Function to fetch and display all districts in a 3x4 grid
 async function getAllRecords() {
   let getResultElement = document.getElementById("districts");
 
@@ -27,29 +27,48 @@ async function getAllRecords() {
     // Reset the content of the districts container
     getResultElement.innerHTML = "";
 
-    let newHTML = "";
+    // Start creating rows
+    let newHTML = `<div class="container">`;
 
-    data.records.forEach((record) => {
+    // Process up to 12 records
+    const records = data.records.slice(0, 12);
+
+    records.forEach((record, index) => {
       const areaPicture = record.fields["Picture"];
       const areaName = record.fields["Area Name"];
       const recordId = record.id;
 
+      // Start a new row for every 3 cards
+      if (index % 3 === 0) {
+        newHTML += `<div class="row py-3 justify-content-center">`; // Added 'gy-4' for row spacing
+      }
+
+      // Add card content
       newHTML += `
-        <div class="col-xl-4 cardImageText">
-          <div class="card list move border-dark mb-5" style="width: 20rem;">
-            <a href="districts.html?id=${recordId}">
-              ${
-                areaPicture
-                  ? `<img class="card-img-top rounded" alt="${areaName}" src="${areaPicture[0].url}">`
-                  : `<div class="card-placeholder">No Image Available</div>`
-              }
-            </a>
-            <p hidden class="card-key">${areaName}</p>
+        <div class="col-md-4 d-flex">
+          <div class="card h-100 w-100 h-101">
+            ${
+              areaPicture
+                ? `<img src="${areaPicture[0].url}" class="card-img-top" alt="${areaName}">`
+                : `<div class="card-placeholder">No Image Available</div>`
+            }
+            <div class="card-body">
+              <h5 class="card-title">${areaName || "Unknown District"}</h5>
+              <hr>
+              <a href="districts.html?id=${recordId}" class="btn btn-secondary">Learn about this district!</a>
+            </div>
           </div>
         </div>
       `;
+
+      // Close the row after 3 cards
+      if ((index + 1) % 3 === 0) {
+        newHTML += `</div>`;
+      }
     });
 
+    // Close the container and any unclosed rows
+    newHTML += `</div>`;
     getResultElement.innerHTML = newHTML;
   } catch (error) {
     console.error("Error fetching all districts:", error);
@@ -134,10 +153,6 @@ async function getOneRecord(id) {
             <tr>
               <th scope="row misc">Historical Temperature</th>
               <td>${formattedString(historical)}</td>
-            </tr>
-            <tr>
-              <th scope="row misc">Current Temperature</th>
-              <td>${formattedString(current)}</td>
             </tr>
           </tbody>
         </table>
