@@ -77,8 +77,18 @@ async function getAllRecords() {
   }
 }
 
+// Function to hide the blurb section
+function hideBlurb() {
+  const blurbSection = document.getElementById("blurb");
+  if (blurbSection) {
+    blurbSection.style.display = "none"; // Hide the blurb section
+  }
+}
+
 // Function to fetch and display a single district's details
 async function getOneRecord(id) {
+  hideBlurb();
+  
   let jobsResultElement = document.getElementById("districts");
 
   const options = {
@@ -173,20 +183,4 @@ if (idParams.length >= 2) {
   getOneRecord(idParams[1]); // Create detail view with the provided ID
 } else {
   getAllRecords(); // Fetch all records for summary view
-}
-
-// MediaQuery listener for responsiveness
-var x = window.matchMedia("(max-width: 1100px)");
-x.addEventListener("change", function () {
-  myFunction(x);
-});
-
-function myFunction(x) {
-  if (x.matches) {
-    console.log("Mobile view activated");
-    // Add mobile-specific behavior if needed
-  } else {
-    console.log("Desktop view activated");
-    // Add desktop-specific behavior if needed
-  }
 }

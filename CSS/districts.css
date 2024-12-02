@@ -57,10 +57,9 @@ body {
 .header-container {
   background-image: url(../Images/hero/GGBA.jpg);
   background-size: cover;
-  background-position: top;
   background-repeat: no-repeat;
   width: 100vw;
-  height: 100vh;
+  height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
