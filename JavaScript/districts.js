@@ -88,7 +88,7 @@ function hideBlurb() {
 // Function to fetch and display a single district's details
 async function getOneRecord(id) {
   hideBlurb();
-  
+
   let jobsResultElement = document.getElementById("districts");
 
   const options = {
@@ -145,23 +145,23 @@ async function getOneRecord(id) {
         <table class="table misc">
           <tbody>
             <tr>
-              <th scope="row misc">Average Temperature</th>
+              <th scope="row misc">Average Temperature:</th>
               <td>${formattedString(average)}</td>
             </tr>
             <tr>
-              <th scope="row misc">Fog Frequency</th>
+              <th scope="row misc">Fog Frequency:</th>
               <td>${formattedString(fog)}</td>
             </tr>
             <tr>
-              <th scope="row misc">Wind Speeds</th>
+              <th scope="row misc">Wind Speeds:</th>
               <td>${formattedString(wind)}</td>
             </tr>
             <tr>
-              <th scope="row misc">Humidity</th>
+              <th scope="row misc">Humidity:</th>
               <td>${formattedString(humidity)}</td>
             </tr>
             <tr>
-              <th scope="row misc">Historical Temperature</th>
+              <th scope="row misc">Historical Temperature:</th>
               <td>${formattedString(historical)}</td>
             </tr>
           </tbody>

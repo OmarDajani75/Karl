@@ -58,6 +58,7 @@ body {
   background-image: url(../Images/hero/GGBA.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   width: 100vw;
   height: 50vh;
   display: flex;
@@ -138,6 +139,47 @@ hr {
   font-family: "Acme";
   font-size: 19px !important;
 } /* So many uses of !important.. but I had to. Bootstrap and all */
+
+/* Details page CSS */
+
+#districts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #2F283C;
+  color: #CE9045;
+  font-family: "Acme";
+}
+
+.card.list {
+  max-width: 900px;
+  background-color: #3B4566;
+  border-radius: 10px;
+}
+
+.img-fluid.back {
+  height: 100%;
+  border-radius: 10px;
+}
+
+.moves {
+  max-width: 900px;
+  width: 100%;
+  background-color: #3B4566;
+  border-radius: 10px;
+}
+
+.table.misc {
+  color: #CE9045;
+  font-family: "Acme";
+  font-size: 18px;
+  margin: 0;
+}
+
+.table.misc th,
+.table.misc td {
+  border: none;
+}
 
 /* Footer CSS */
 
