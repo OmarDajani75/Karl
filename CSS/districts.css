@@ -72,7 +72,6 @@ body {
   font-family: "Acme";
   color: #CE9045;
   text-shadow: 2px 2px 5px #2F283C;
-  /* animation: */
 }
 
 /* Blurb section CSS */
@@ -157,9 +156,28 @@ hr {
   border-radius: 10px;
 }
 
+.card.detail-container,
+.moves {
+  border: 2px solid #E04327;
+  padding: 15px;
+  margin: 15px;
+}
+
 .img-fluid.back {
   height: 100%;
   border-radius: 10px;
+}
+
+.detail-image {
+  border-radius: 10px;
+}
+
+.card-body {
+  text-align: center;
+}
+
+.card-title {
+  font-size: 28px;
 }
 
 .moves {
@@ -172,7 +190,7 @@ hr {
 .table.misc {
   color: #CE9045;
   font-family: "Acme";
-  font-size: 18px;
+  font-size: 20px;
   margin: 0;
 }
 

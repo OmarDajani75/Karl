@@ -81,7 +81,7 @@ async function getAllRecords() {
 function hideBlurb() {
   const blurbSection = document.getElementById("blurb");
   if (blurbSection) {
-    blurbSection.style.display = "none"; // Hide the blurb section
+    blurbSection.style.display = "none";
   }
 }
 
@@ -124,50 +124,53 @@ async function getOneRecord(id) {
     } = data.fields;
 
     let newHTML = `
-      <div class="card list mb-3">
-        <div class="row g-0">
-          <div class="col-md-4 d-flex justify-content-center align-items-center">
-            ${
-              picture
-                ? `<img class="img-fluid back ms-4" alt="${name}" src="${picture[0].url}">`
-                : `<div class="card-placeholder">No Image Available</div>`
-            }
-          </div>
-          <div class="col-md-6 d-flex justify-content-center align-items-center desc">
-            <div class="card-body">
-              <h5 class="card-title bar">${name || "Unknown District"}</h5>
-              <p class="card-text">${blurb || "No description available."}</p>
-            </div>
-          </div>
+  <div class="card list mb-3 detail-container">
+    <div class="row g-0">
+      <!-- Picture section -->
+      <div class="col-12 text-center">
+        ${
+          picture
+            ? `<img class="img-fluid detail-image" alt="${name}" src="${picture[0].url}">`
+            : `<div class="card-placeholder">No Image Available</div>`
+        }
+      </div>
+      <!-- Name and Blurb -->
+      <div class="col-12 text-center">
+        <div class="card-body">
+          <h5 class="card-title bar">${name || "Unknown District"}</h5>
+          <p class="card-text">${blurb || "No description available."}</p>
         </div>
       </div>
-      <div class="moves">
-        <table class="table misc">
-          <tbody>
-            <tr>
-              <th scope="row misc">Average Temperature:</th>
-              <td>${formattedString(average)}</td>
-            </tr>
-            <tr>
-              <th scope="row misc">Fog Frequency:</th>
-              <td>${formattedString(fog)}</td>
-            </tr>
-            <tr>
-              <th scope="row misc">Wind Speeds:</th>
-              <td>${formattedString(wind)}</td>
-            </tr>
-            <tr>
-              <th scope="row misc">Humidity:</th>
-              <td>${formattedString(humidity)}</td>
-            </tr>
-            <tr>
-              <th scope="row misc">Historical Temperature:</th>
-              <td>${formattedString(historical)}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    `;
+    </div>
+  </div>
+  <!-- Additional Details -->
+  <div class="moves">
+    <table class="table misc">
+      <tbody>
+        <tr>
+          <th scope="row misc">Average Temperature:</th>
+          <td>${formattedString(average)}</td>
+        </tr>
+        <tr>
+          <th scope="row misc">Fog Frequency:</th>
+          <td>${formattedString(fog)}</td>
+        </tr>
+        <tr>
+          <th scope="row misc">Wind Speeds:</th>
+          <td>${formattedString(wind)}</td>
+        </tr>
+        <tr>
+          <th scope="row misc">Humidity:</th>
+          <td>${formattedString(humidity)}</td>
+        </tr>
+        <tr>
+          <th scope="row misc">Historical Temperature:</th>
+          <td>${formattedString(historical)}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+`;
 
     jobsResultElement.innerHTML = newHTML;
   } catch (error) {
